@@ -1,0 +1,168 @@
+@use '../abstract/mixins' as m;
+@use '../base/typography' as t;
+@use '../abstract/variables' as v;
+
+.btn{
+    outline: none;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    // primary buttons
+    &-primary{
+        color: v.$white;
+        background-color: v.$dark-blue;
+        border: 0.2rem solid v.$dark-blue;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: rgba(v.$dark-blue, $alpha: 0.9);
+        }
+
+        &-small{
+            @extend .btn-primary;
+            @extend .paragraphs;
+            padding: 0.8rem 4rem;
+            border-radius: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+        &-large{
+            @extend .btn-primary;
+            @extend .paragraphs;
+            padding: 1.6rem 5.6rem;
+            border-radius: 5.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+    }
+
+    // primary green buttons
+
+    &-primary-green{
+        color: v.$dark-blue;
+        background-color: v.$green;
+        border: 0.2rem solid v.$green;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: rgba(v.$green, $alpha: 0.9);
+        }
+
+        &-small{
+            @extend .btn-primary-green;
+            @extend .paragraphs;
+            padding: 0.8rem 4rem;
+            border-radius: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+        &-large{
+            @extend .btn-primary-green;
+            @extend .paragraphs;
+            padding: 1.6rem 5.6rem;
+            border-radius: 5.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+    }
+
+
+    // primary white buttons
+
+    &-primary-white{
+        color: v.$dark-blue;
+        background-color: v.$white;
+        border: 0.2rem solid v.$white;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: rgba(v.$white, $alpha: 0.9);
+        }
+
+        &-small{
+            @extend .btn-primary-white;
+            @extend .paragraphs;
+            padding: 0.8rem 4rem;
+            border-radius: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+        &-large{
+            @extend .btn-primary-white;
+            @extend .paragraphs;
+            padding: 1.6rem 5.6rem;
+            border-radius: 5.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+    }
+    
+
+    // secondary buttons
+
+    &-secondary{
+        color: v.$dark-blue;
+        background-color: transparent;
+        border: 0.2rem solid v.$dark-blue;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: rgba(v.$white, $alpha: 0.9);
+        }
+
+        &-small{
+            @extend .btn-secondary;
+            @extend .paragraphs;
+            padding: 0.8rem 4rem;
+            border-radius: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+        &-large{
+            @extend .btn-secondary;
+            @extend .paragraphs;
+            padding: 1.6rem 5.6rem;
+            border-radius: 5.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+    }
+
+
+    // secondary white buttons
+
+    &-secondary-white{
+        color: v.$white;
+        background-color: transparent;
+        border: 0.2rem solid v.$white;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: rgba(v.$white, $alpha: 0.2);
+        }
+
+        &-small{
+            @extend .btn-secondary-white;
+            @extend .paragraphs;
+            padding: 0.8rem 4rem;
+            border-radius: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+        &-large{
+            @extend .btn-secondary-white;
+            @extend .paragraphs;
+            padding: 1.6rem 5.6rem;
+            border-radius: 5.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+    }
+} 
