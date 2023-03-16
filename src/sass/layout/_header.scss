@@ -1,0 +1,46 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.navigation{
+    
+    @include m.flexbox(row, space-between, center);
+    z-index: 10;
+    padding-top: 5.6rem;
+
+    .logo{
+        width: auto;
+        height: 4.2rem;
+
+        img{
+            height: 4.2rem;
+        }
+    }
+
+    .nav{
+        display: flex;
+        list-style: none;
+        gap: 4rem;
+        z-index: 100;
+        
+        a{
+            text-decoration: none;
+        }
+
+        &-link{
+              @extend .paragraphs-text-xs;
+              font-weight: 600;
+
+              a{
+                color: v.$white;
+                transition: all 0.3s ease-in-out;
+
+                &:hover{
+                    color: v.$green;
+                }
+              }
+        }
+
+        
+    }
+}
