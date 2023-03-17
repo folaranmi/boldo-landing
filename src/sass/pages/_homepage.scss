@@ -447,6 +447,97 @@
 }
 
 
+// Learn More section
+
+.learn-more{
+    padding: 12.4rem 0 7.4rem 0;
+    
+    .imagebox{
+        width: 110rem;
+        height: auto;
+        max-height: 40.3rem;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content{
+        padding: 5.6rem 0 0 0;
+        @include m.flexbox(row, space-between, flex-start);
+        gap: 10rem;
+
+        .lefttext{
+            @extend .headings-text-xl;
+            font-weight: 400;
+            max-width: 50rem;
+        }
+    }
+}
+
+
+// Blog Section
+.blog{
+    &__wrapper{
+        @include m.flexbox(row, space-between, center);
+        gap: 5rem;
+        margin-bottom: 8.4rem;
+    }
+
+    &__box{
+        width: 100%;
+        max-width: 30rem;
+
+        &--imagebox{
+            width: 30rem;
+            height: 20.9rem;
+
+            img{
+                width: auto;
+                object-fit: cover;
+            }
+        }
+
+        &--heading{
+            @include m.flexbox(row, flex-start, center);
+            gap: 1.2rem;
+            padding: 2.4rem 0 1.2rem 0;
+
+            .category{
+                @extend .paragraphs-text-xs;
+                font-weight: 700;
+                color: v.$dark-blue;
+            }
+            .date{
+                @extend .paragraphs-text-xs;
+                color: v.$grey;
+                font-weight: 400;
+            }
+        }
+
+        .wraptext{
+            @include m.flexbox(column, space-between, flex-start);
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-content: baseline;
+        }
+
+        &--maintext{
+            @extend .paragraphs-text-s;
+            color: v.$black;
+        }
+
+        &--author{
+            @include m.flexbox(row, flex-start, center);
+            gap: 1.2rem;
+        }
+
+    }
+}
+
+
 
 // Heading section
 
@@ -467,4 +558,10 @@
         color: v.$black;
         font-weight: 400;
     }
+}
+
+.centralize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

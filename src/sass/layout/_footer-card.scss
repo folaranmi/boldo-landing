@@ -1,0 +1,40 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+
+.footer-card{
+    width: 100%;
+    max-width: 120rem;
+    height: auto;
+    min-height: 30rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background-color: v.$dark-blue;
+    position: relative;
+    padding: 7.2rem 1.5rem;
+    margin: 12.4rem 0 8.4rem 0;
+    @include m.flexbox(column, center, center);
+
+    .accent{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .heading{
+        @extend .headings-text-xxl;
+        color: v.$white;
+        font-weight: 400;
+        text-align: center;
+        max-width: 71.6rem;
+        z-index: 100;
+    }
+
+    .ctabox{
+        @include m.flexbox(row, center, center);
+        width: 100%;
+        gap: 2.4rem;
+        margin-top: 5rem;
+    }
+}

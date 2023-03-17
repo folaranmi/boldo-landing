@@ -10,10 +10,18 @@ import PieChart from ".././../../assets/images/pngs/pie-chart.png";
 import User1 from ".././../../assets/images/pngs/user1.png";
 import User2 from ".././../../assets/images/pngs/user2.png";
 import User3 from ".././../../assets/images/pngs/user3.png";
+import BlogPost1 from ".././../../assets/images/pngs/blog-post1.png";
+import BlogPost2 from ".././../../assets/images/pngs/blog-post2.png";
+import BlogPost3 from ".././../../assets/images/pngs/blog-post3.png";
+import Author1 from ".././../../assets/images/pngs/author1.png";
+import Author2 from ".././../../assets/images/pngs/author2.png";
+import Author3 from ".././../../assets/images/pngs/author3.png";
 
-// import ConnectionImage3 from ".././../../assets/images/pngs/customer-connection3.png";
+import ConnectionImage3 from ".././../../assets/images/pngs/customer-connection3.png";
 import { FiArrowRight, FiCheck, FiFeather, FiSun, FiEye, FiArrowLeft } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import Accordion from '../../atoms/accordion/Accordion';
+import FooterCTA from '../../molecules/footer-cta/FooterCTA';
 
 function HomePage() {
 
@@ -190,7 +198,7 @@ function HomePage() {
 
       {/* Testimonials */}
       <div className="testimonials">
-        <div className="container">
+        <div className="container-sm">
 
           <div className="testimonials__header">
             <h1 className='heading'>An enterprise template to ramp up your company website</h1>
@@ -226,6 +234,122 @@ function HomePage() {
 
         </div>
       </div>
+
+      {/* Teams section */}
+
+      <div className="learn-more">
+        <div className="container-sm">
+          <div className="imagebox">
+            <img src={ConnectionImage3} alt="connection" />
+          </div>
+
+          <div className="content">
+
+            <p className='lefttext'>We connect our customers with the best, and help them keep up-and stay open.</p>
+            <div className="accordion">
+
+              <Accordion
+                title="We connect our customers with the best?"
+                content="We connect our customers with the best?"
+              />
+
+              <Accordion
+                title="Android research & development rockstar?"
+                content="Android research & development rockstar?"
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Our Blog Section */}
+      <div className="container-sm">
+        <div className="heading-box">
+          <h6 className="title">Our Blog</h6>
+          <h2 className="heading">Value proposition accelerator product management venture</h2>
+        </div>
+
+        <div className="blog__wrapper">
+
+          <div className="blog__box">
+            <div className="blog__box--imagebox">
+              <img src={BlogPost1} alt="blogpost1" />
+            </div>
+            <div className="blog__box--heading">
+              <span className='category'>Category</span>
+              <span className='date'>November 22, 2021</span>
+            </div>
+            <div className="wraptext">
+              <p className='blog__box--maintext'>
+                Pitch termsheet backing validation focus release.
+              </p>
+
+              <div className="blog__box--author">
+                <div className="picture">
+                  <img src={Author1} alt="author1" />
+                </div>
+                <span className="name">Chandler Bing</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="blog__box">
+            <div className="blog__box--imagebox">
+              <img src={BlogPost2} alt="blogpost1" />
+            </div>
+            <div className="blog__box--heading">
+              <span className='category'>Category</span>
+              <span className='date'>November 22, 2021</span>
+            </div>
+            <div className="wraptext">
+              <p className='blog__box--maintext'>
+                Seed round direct mailing non-disclosure agreement graphical user interface rockstar.
+              </p>
+
+              <div className="blog__box--author">
+                <div className="picture">
+                  <img src={Author2} alt="author1" />
+                </div>
+                <span className="name">Chandler Bing</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="blog__box">
+            <div className="blog__box--imagebox">
+              <img src={BlogPost3} alt="blogpost1" />
+            </div>
+            <div className="blog__box--heading">
+              <span className='category'>Category</span>
+              <span className='date'>November 22, 2021</span>
+            </div>
+            <div className="wraptext">
+              <p className='blog__box--maintext'>
+                Beta prototype sales iPad gen-z marketing network effects value proposition
+              </p>
+
+              <div className="blog__box--author">
+                <div className="picture">
+                  <img src={Author3} alt="author1" />
+                </div>
+                <span className="name">Chandler Bing</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        
+        <div className="centralize">
+          <button className='btn btn-secondary-large'>Load more</button>
+        </div>
+
+      </div>
+
+      <FooterCTA />
 
     </div>
   )

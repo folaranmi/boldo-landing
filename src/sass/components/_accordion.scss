@@ -1,0 +1,77 @@
+
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+@use '../abstract/mixins' as m;
+
+
+.accordion{
+
+    width: 100%;
+    height: auto;
+    @include m.flexbox(column, flex-start, center);
+    gap: 2.2rem;
+
+    &__heading{
+        width: 100%;
+        @include m.flexbox(row, space-between, center);
+        gap: 1rem;
+        height: 4rem;
+        padding: 0rem 1.3rem 2rem 0;
+        border-bottom: 1px solid #c4c4c4;
+        cursor: pointer;
+        background-color: v.$white;
+        line-height: 1.6rem;
+
+        .text{
+            @extend .paragraphs-text-s;
+            color: v.$black;
+            font-weight: 400;
+            transition: all .3s ease-in-out;
+            margin: 0;
+
+            &.active{
+                color: v.$dark-blue;
+            }
+        }
+
+        .iconbox{
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            background-color: v.$dark-blue;
+            @include m.flexbox(row, center, center);
+        }
+        .icon{
+            color: v.$white;
+            transition: transform .3s ease-in-out;
+
+
+            &.active{
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &__content{
+        width: 100%;
+        padding: 1rem 1.3rem 2rem 1.3rem;
+        color: v.$dark-blue;
+        @extend .paragraphs-text-xs;
+        line-height: 2.7rem;
+        background-color: v.$white;
+
+        transition: all 0.7s ease-in-out;
+
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+
+        &.active{
+            max-height: unset;
+            opacity: 1;
+            visibility: visible;
+            overflow: auto;
+        }
+    }
+}
