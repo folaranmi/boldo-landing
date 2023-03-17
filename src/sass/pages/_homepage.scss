@@ -135,13 +135,110 @@
 .connectbox {
     width: 100%;
     height: auto;
+    margin-bottom: 12rem;
     @include m.flexbox(row, space-between, center);
 
-    // .image__content {}
+    .image__content {
+        flex-basis: 50%;
+
+        &--wrapper {
+            width: 100%;
+            max-width: 49.9rem;
+
+            .theimage {
+                width: 100%;
+                max-width: 49.9rem;
+            }
+
+            .databox {
+                width: auto;
+
+                height: 38.8rem;
+                border-radius: .4rem;
+                box-shadow: 0 .4rem 3.2rem rgba(0, 0, 0, 0.12);
+                border-radius: 1.2rem;
+                background-color: v.$white;
+                color: v.$dark-blue;
+                font-family: "Manrope";
+                z-index: 120;
+                position: relative;
+
+                &.first {
+                    max-width: 25.1rem;
+                    padding: 4rem;
+                    margin-top: -28.4rem;
+                    margin-left: 18.6rem;
+                }
+
+                &.second {
+                    max-width: 29.1rem;
+                    padding: 4.779rem 5.579rem;
+                    margin-top: -21.9rem;
+                    margin-left: 4.8rem;
+                }
+
+
+                .percentage {
+                    font-size: 2.4rem;
+                    line-height: 3.6rem;
+                    margin-top: 1.979rem;
+                    margin-bottom: .4rem;
+                    font-weight: 700;
+
+                }
+
+                .metrics {
+                    font-size: 1.4rem;
+                    line-height: 2.4rem;
+                    font-weight: 400;
+                }
+
+                .metricsbox {
+                    margin-top: 2.279rem;
+
+                    .item {
+                        list-style: none;
+                        font-family: "Manrope";
+                        font-size: 1.388rem;
+                        line-height: 2.379rem;
+                        font-weight: 400;
+
+                        &:not(:last-child) {
+                            padding-bottom: 1.17rem;
+                        }
+
+                        &::before {
+                            content: " ";
+                            width: 4.97px;
+                            height: 4.97px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-right: .795rem;
+                        }
+
+                        &.blue::before {
+                            background-color: v.$light-blue;
+                        }
+
+                        &.green::before {
+                            background-color: v.$green;
+                        }
+
+                        &.grey::before {
+                            background-color: #c4c4c4;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
 
     .text__content {
         width: auto;
         max-width: 50rem;
+        flex-basis: 50%;
 
         .heading {
             @extend .headings-text-xl;
@@ -160,7 +257,7 @@
 
             .check {
                 width: 3.6rem;
-                max-width: 3.6rem;
+                min-width: 3.6rem;
                 height: 3.6rem;
                 border-radius: 100%;
                 background-color: v.$dark-blue;
@@ -188,14 +285,16 @@
             box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
             border-radius: 4px;
 
-            &:hover{
+            &:hover {
                 background-color: v.$dark-blue;
-                
 
-                .check-text, .icon{
+
+                .check-text,
+                .icon {
                     color: v.$white;
                 }
-                .check .icon{
+
+                .check .icon {
                     color: v.$white;
                 }
             }
@@ -208,7 +307,7 @@
                 width: 3.6rem;
                 max-width: 3.6rem;
                 height: 3.6rem;
-                
+
                 font-size: 2.8rem;
                 @include m.flexbox(row, center, center);
 
@@ -230,6 +329,120 @@
         }
 
 
+    }
+}
+
+
+.testimonials {
+    width: 100%;
+    height: auto;
+    min-height: 79.7rem;
+    background-color: v.$dark-blue;
+    padding: 9.6rem 0;
+
+    &__header {
+        @include m.flexbox(row, space-between, flex-end);
+        gap: 2rem;
+
+        .heading {
+            @extend .headings-text-xxl;
+            font-weight: 400;
+            color: v.$white;
+            max-width: 71.6rem;
+        }
+
+        .slider-control {
+            @include m.flexbox(row, center, center);
+            gap: 2.8rem;
+
+            .control {
+                width: 7.2rem;
+                height: 7.2rem;
+                border-radius: 50%;
+                background-color: v.$white;
+                cursor: pointer;
+                @include m.flexbox(row, center, center);
+                transition: all 0.3s ease-in-out;
+
+                .icon {
+                    font-size: 3.6rem;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    background-color: v.$green;
+
+                    .icon {
+                        color: v.$white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        padding-top: 7.2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 2.2rem;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &--box {
+            width: 100%;
+            min-width: 35rem;
+            background-color: v.$white;
+            border-radius: 1.2rem;
+            padding: 4rem;
+            @include m.flexbox(column, flex-start, baseline);
+            gap: 4rem;
+
+            .quote{
+                @extend .paragraphs-text-m;
+                font-weight: 400;
+                color: v.$black;
+            }
+
+            .userbox{
+                @include m.flexbox(row, flex-start, center);
+                gap: 1.6rem;
+
+                .user-image{
+                    width: 5.8rem;
+                    height: 5.8rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    .image{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .user-details{
+                    @include m.flexbox(column, flex-start, flex-start);
+                    gap: .6rem;
+                    color: v.$dark-blue;
+                    font-family: "Open Sans";
+
+                    .name{
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                    }
+
+                    .position{
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                    }
+
+                }
+            }
+        }
     }
 }
 
