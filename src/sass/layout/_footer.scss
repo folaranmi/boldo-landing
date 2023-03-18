@@ -13,6 +13,16 @@
         display: grid;
         grid-template-columns: 37% 21% 21% 21%;
 
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+        }
+
+        @include m.phone{
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5rem;
+        }
+
         &__box {
 
             .title{
@@ -60,6 +70,10 @@
                     color: v.$grey;
                     max-width: 30rem;
                     padding-bottom: 6.4rem;
+
+                    @include m.phone{
+                        max-width: 100%;
+                    }
                 }
 
                 .copyright{

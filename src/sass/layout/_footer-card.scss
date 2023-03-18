@@ -36,5 +36,9 @@
         width: 100%;
         gap: 2.4rem;
         margin-top: 5rem;
+
+        @include m.tabletS{
+            flex-direction: column;
+        }
     }
 }

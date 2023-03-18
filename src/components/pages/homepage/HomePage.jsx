@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import HeroLanding from '../../organisms/hero-landing/HeroLanding'
 import Feature1 from ".././../../assets/images/pngs/feature1.png";
 import Feature2 from ".././../../assets/images/pngs/feature2.png";
@@ -64,6 +64,26 @@ function HomePage() {
       position: "Team Leader @ Gryffindor",
     },
   ]
+
+  const sliderRef = useRef(null);
+  // Handle rooms carousel image slider.
+  const handleBoxSlider = (direction) => {
+    if (direction === "r") {
+      sliderRef.current.scrollBy({
+        top: 0,
+        left: 372,
+        behavior: "smooth"
+      });
+    } else if (direction === "l") {
+      sliderRef.current.scrollBy({
+        top: 0,
+        left: -372,
+        behavior: "smooth"
+      });
+    }
+  }
+
+
   return (
     <div>
       <HeroLanding />
@@ -130,26 +150,28 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="text__content">
+          <div className="text__content contentpos">
             <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
 
-            <div className="listbox-one">
-              <div className='check'><FiCheck size="" className='icon' /></div>
-              <span className='check-text'>We connect our customers with the best.</span>
-            </div>
+            <div className="listcon">
+              <div className="listbox-one">
+                <div className='check'><FiCheck size="" className='icon' /></div>
+                <span className='check-text'>We connect our customers with the best.</span>
+              </div>
 
-            <div className="listbox-one">
-              <div className='check'><FiCheck size="" className='icon' /></div>
-              <span className='check-text'>Advisor success customer launch party.</span>
-            </div>
+              <div className="listbox-one">
+                <div className='check'><FiCheck size="" className='icon' /></div>
+                <span className='check-text'>Advisor success customer launch party.</span>
+              </div>
 
-            <div className="listbox-one">
-              <div className='check'><FiCheck size="" className='icon' /></div>
-              <span className='check-text'>Business-to-consumer long tail.</span>
-            </div>
+              <div className="listbox-one">
+                <div className='check'><FiCheck size="" className='icon' /></div>
+                <span className='check-text'>Business-to-consumer long tail.</span>
+              </div>
 
-            <div className='cta'>
-              <button className='btn btn-primary-large'> Start now</button>
+              <div className='cta'>
+                <button className='btn btn-primary-large'> Start now</button>
+              </div>
             </div>
           </div>
         </div>
@@ -159,24 +181,27 @@ function HomePage() {
 
           <div className="text__content">
             <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
+            <div className="listcon">
 
-            <div className="listbox-two">
-              <div className='check'><FiFeather size="" className='icon' /></div>
-              <span className='check-text'>We connect our customers with the best.</span>
-            </div>
+              <div className="listbox-two">
+                <div className='check'><FiFeather size="" className='icon' /></div>
+                <span className='check-text'>We connect our customers with the best.</span>
+              </div>
 
-            <div className="listbox-two">
-              <div className='check'><FiSun size="" className='icon' /></div>
-              <span className='check-text'>Advisor success customer launch party.</span>
-            </div>
+              <div className="listbox-two">
+                <div className='check'><FiSun size="" className='icon' /></div>
+                <span className='check-text'>Advisor success customer launch party.</span>
+              </div>
 
-            <div className="listbox-two">
-              <div className='check'><FiEye size="" className='icon' /></div>
-              <span className='check-text'>Business-to-consumer long tail.</span>
+              <div className="listbox-two">
+                <div className='check'><FiEye size="" className='icon' /></div>
+                <span className='check-text'>Business-to-consumer long tail.</span>
+              </div>
+
             </div>
           </div>
 
-          <div className="image__content">
+          <div className="image__content contentpos">
 
             <div className="image__content--wrapper">
               <img src={ConnectionImage2} alt="customer conection" />
@@ -204,15 +229,15 @@ function HomePage() {
           <div className="testimonials__header">
             <h1 className='heading'>An enterprise template to ramp up your company website</h1>
             <div className="slider-control">
-              <div className="control"><FiArrowLeft className='icon' /></div>
-              <div className="control"><FiArrowRight className='icon' /></div>
+              <div className="control" onClick={() => handleBoxSlider("l")} ><FiArrowLeft className='icon' /></div>
+              <div className="control"onClick={() => handleBoxSlider("r")} ><FiArrowRight className='icon' /></div>
             </div>
           </div>
 
-          <div className="testimonials__slider">
+          <div className="testimonials__slider" ref={sliderRef}>
 
-            {testimonials.map((user) => (
-              <div className="testimonials__slider--box">
+            {testimonials.map((user, index) => (
+              <div className="testimonials__slider--box" key={index}>
 
                 <q className='quote'>{user.quote}</q>
                 <div className="userbox">
@@ -343,7 +368,7 @@ function HomePage() {
           </div>
 
         </div>
-        
+
         <div className="centralize">
           <button className='btn btn-secondary-large'>Load more</button>
         </div>

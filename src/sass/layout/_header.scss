@@ -7,10 +7,12 @@
     @include m.flexbox(row, space-between, center);
     z-index: 10;
     padding-top: 5.6rem;
+    position: relative;
 
     .logo{
         width: auto;
         height: 4.2rem;
+        z-index: 100;
 
         img{
             height: 4.2rem;
@@ -22,6 +24,25 @@
         list-style: none;
         gap: 4rem;
         z-index: 100;
+
+        @include m.tabletS{
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: v.$green;
+            display: none;
+            width: 100%;
+            padding: 5rem;
+            top: 10.8rem;
+            z-index: 110;
+            border-radius: 0 0 1.2rem 1.2rem;
+
+        }
+
+        &.active{
+            display: flex!important;
+        }
         
         a{
             text-decoration: none;
@@ -35,12 +56,32 @@
                 color: v.$white;
                 transition: all 0.3s ease-in-out;
 
+                @include m.tabletS{
+                    color: v.$dark-blue;
+                }
+
                 &:hover{
                     color: v.$green;
+
+                    @include m.tabletS{
+                        color: v.$white;
+                    }
                 }
               }
         }
 
         
+    }
+
+    .menu{
+        display: none;
+        font-size: 3rem;
+        color: v.$white;
+        z-index: 100;
+        cursor: pointer;
+
+        @include m.tabletS{
+            display: flex;
+        }
     }
 }

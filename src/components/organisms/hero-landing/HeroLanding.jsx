@@ -46,11 +46,11 @@ function HeroLanding() {
 
                 {/* Hero Logo Slider */}
                 <div className="logo-slider">
-                    {sliderImages.map((image) => (
-                        <img src={image.src} alt={image.alt} />
+                    {sliderImages.map((image, index) => (
+                        <img src={image.src} alt={image.alt} key={index} />
                     ))}
-
                 </div>
+
             </div>
         </div>
     )

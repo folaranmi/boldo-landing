@@ -16,6 +16,10 @@
         top: 0;
         right: 0;
         z-index: 2;
+
+        @include m.tabletS {
+            width: 70%;
+        }
     }
 
     .hero-content {
@@ -25,8 +29,13 @@
         height: auto;
         min-height: 42.3rem;
         margin: 6.4rem 0 5.6rem 0;
-        z-index: 100;
+        z-index: 5;
         position: relative;
+
+        @include m.tabletS {
+            flex-direction: column;
+            gap: 7rem;
+        }
 
         .textcon {
             max-width: 55rem;
@@ -36,17 +45,40 @@
                 color: v.$white;
                 font-weight: 400;
                 margin-bottom: 1.6rem;
+
+                @include m.tabletS {
+                    text-align: center;
+                }
             }
 
             .sub-heading {
                 @extend .paragraphs-text-xs;
                 color: v.$white;
                 margin-bottom: 4rem;
+
+                @include m.tabletS {
+                    text-align: center;
+                }
             }
 
             .cta-box {
                 display: flex;
                 gap: 2.4rem;
+
+                @include m.tabletS {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .imagecon {
+            width: 100%;
+            height: auto;
+            max-width: 49.4rem;
+
+            img {
+                width: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -56,36 +88,63 @@
         height: auto;
         max-height: 9.3rem;
         padding: 3.3rem 0 1.2rem 0;
+        position: relative;
+        
         @include m.flexbox(row, flex-start, center);
         gap: 5.6rem;
         overflow-x: auto;
 
-        // img{
-        //     margin-bottom: 1.71rem;
-        // }
+        @include m.tabletS {
+            padding-bottom: 8rem;
+        }
 
         &::-webkit-scrollbar {
             display: none;
         }
 
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 9.3rem;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(10, 38, 64, 1) 0%, rgba(6, 5, 81, 0) 20%, rgba(9, 9, 121, 0) 81%, rgba(10, 38, 64, 1) 100%);
+        }
+
     }
+
+    
 }
 
 // Services features
 
 .features {
-    @include m.flexbox(row, space-around, center);
+    @include m.flexbox(row, space-between, center);
     gap: 2rem;
+    row-gap: 5rem;
+    flex-wrap: wrap;
     padding-bottom: 18.5rem;
 
+    @include m.tablet {}
+
     &__box {
-        width: 100%;
-        max-width: 30rem;
+        flex-basis: 30rem;
         @include m.flexbox(column, flex-start, center);
-        gap: 2.4rem;
+        gap: 3.3%;
+        row-gap: 2.4rem;
+
+        @include m.tablet {
+            flex-basis: 45%;
+        }
+
+        @include m.phone {
+            flex-basis: 100%;
+        }
 
         &--image {
-            width: 30rem;
+            width: 100%;
+
             height: auto;
 
             img {
@@ -94,6 +153,7 @@
         }
 
         &--content {
+
             .title {
                 @extend .paragraphs-text-m;
                 font-weight: 400;
@@ -133,13 +193,22 @@
 }
 
 .connectbox {
-    width: 100%;
-    height: auto;
     margin-bottom: 12rem;
     @include m.flexbox(row, space-between, center);
+    gap: 5rem;
+
+    @include m.tablet {
+        flex-wrap: wrap;
+    }
+
 
     .image__content {
         flex-basis: 50%;
+
+        @include m.tablet {
+            flex-basis: 100%;
+            @include m.content-center;
+        }
 
         &--wrapper {
             width: 100%;
@@ -237,13 +306,32 @@
 
     .text__content {
         width: auto;
-        max-width: 50rem;
+        justify-self: center;
         flex-basis: 50%;
+
+        @include m.tablet {
+            flex-basis: 100%;
+            @include m.content-center;
+        }
 
         .heading {
             @extend .headings-text-xl;
             font-weight: 400;
             margin-bottom: 4rem;
+            max-width: 50rem;
+
+            @include m.tablet {
+                max-width: 80rem;
+            }
+
+        }
+
+        .listcon {
+            max-width: 50rem;
+
+            @include m.tablet {
+                max-width: 80rem;
+            }
         }
 
         .listbox-one {
@@ -330,6 +418,13 @@
 
 
     }
+
+    .contentpos {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        flex-direction: column;
+    }
 }
 
 
@@ -343,6 +438,11 @@
     &__header {
         @include m.flexbox(row, space-between, flex-end);
         gap: 2rem;
+
+
+        @include m.phone {
+            flex-direction: column;
+        }
 
         .heading {
             @extend .headings-text-xxl;
@@ -402,40 +502,40 @@
             @include m.flexbox(column, flex-start, baseline);
             gap: 4rem;
 
-            .quote{
+            .quote {
                 @extend .paragraphs-text-m;
                 font-weight: 400;
                 color: v.$black;
             }
 
-            .userbox{
+            .userbox {
                 @include m.flexbox(row, flex-start, center);
                 gap: 1.6rem;
 
-                .user-image{
+                .user-image {
                     width: 5.8rem;
                     height: 5.8rem;
                     border-radius: 50%;
                     overflow: hidden;
 
-                    .image{
+                    .image {
                         width: 100%;
                         object-fit: cover;
                     }
                 }
 
-                .user-details{
+                .user-details {
                     @include m.flexbox(column, flex-start, flex-start);
                     gap: .6rem;
                     color: v.$dark-blue;
                     font-family: "Open Sans";
 
-                    .name{
+                    .name {
                         font-size: 1.6rem;
                         font-weight: 700;
                     }
 
-                    .position{
+                    .position {
                         font-size: 1.4rem;
                         font-weight: 400;
                     }
@@ -449,87 +549,112 @@
 
 // Learn More section
 
-.learn-more{
+.learn-more {
     padding: 12.4rem 0 7.4rem 0;
-    
-    .imagebox{
-        width: 110rem;
+
+    .imagebox {
+        width: 100%;
+        max-width: 110rem;
         height: auto;
         max-height: 40.3rem;
         overflow: hidden;
 
-        img{
+        img {
             width: 100%;
             object-fit: cover;
         }
     }
 
-    .content{
+    .content {
         padding: 5.6rem 0 0 0;
         @include m.flexbox(row, space-between, flex-start);
-        gap: 10rem;
+        gap: 8rem;
 
-        .lefttext{
+        @include m.tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lefttext {
             @extend .headings-text-xl;
             font-weight: 400;
             max-width: 50rem;
+
+            @include m.tablet {
+                text-align: center;
+            }
         }
     }
 }
 
 
 // Blog Section
-.blog{
-    &__wrapper{
-        @include m.flexbox(row, space-between, center);
-        gap: 5rem;
+.blog {
+    &__wrapper {
+        @include m.flexbox(row, space-between, none);
+        gap: 3.3rem;
         margin-bottom: 8.4rem;
+        flex-wrap: wrap;
+
+        @include m.tablet {
+            gap: 2.5%;
+            row-gap: 5rem;
+        }
     }
 
-    &__box{
-        width: 100%;
-        max-width: 30rem;
+    &__box {
+        flex-basis: 30%;
 
-        &--imagebox{
-            width: 30rem;
-            height: 20.9rem;
+        @include m.tablet {
+            flex-basis: 45%;
+        }
 
-            img{
-                width: auto;
+        @include m.phone {
+            flex-basis: 100%;
+        }
+
+
+
+        &--imagebox {
+            width: 100%;
+
+            img {
+                width: 100%;
                 object-fit: cover;
             }
         }
 
-        &--heading{
+        &--heading {
             @include m.flexbox(row, flex-start, center);
             gap: 1.2rem;
             padding: 2.4rem 0 1.2rem 0;
 
-            .category{
+            .category {
                 @extend .paragraphs-text-xs;
                 font-weight: 700;
                 color: v.$dark-blue;
             }
-            .date{
+
+            .date {
                 @extend .paragraphs-text-xs;
                 color: v.$grey;
                 font-weight: 400;
             }
         }
 
-        .wraptext{
+        .wraptext {
             @include m.flexbox(column, space-between, flex-start);
             gap: 2rem;
             flex-wrap: wrap;
             align-content: baseline;
         }
 
-        &--maintext{
+        &--maintext {
             @extend .paragraphs-text-s;
             color: v.$black;
         }
 
-        &--author{
+        &--author {
             @include m.flexbox(row, flex-start, center);
             gap: 1.2rem;
         }
@@ -560,7 +685,7 @@
     }
 }
 
-.centralize{
+.centralize {
     display: flex;
     justify-content: center;
     align-items: center;
