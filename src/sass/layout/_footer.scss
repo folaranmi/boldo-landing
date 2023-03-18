@@ -1,0 +1,82 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+@use '../base/typography' as t;
+
+.footer-con {
+    width: 100%;
+    height: auto;
+    min-height: 47.4rem;
+    background-color: v.$white;
+    padding: 10rem 0 11.7rem 0;
+
+    .footer {
+        display: grid;
+        grid-template-columns: 37% 21% 21% 21%;
+
+        &__box {
+
+            .title{
+                color: v.$black;
+                font-weight: 700;
+                @extend .paragraphs-text-s;
+            }
+
+            .linkbox{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 4.7rem;
+                margin-top: 3.2rem;
+
+                .footer__link{
+                    
+                    a{
+                        text-decoration: none;
+                        color: v.$grey;
+                        @extend .paragraphs-text-s;
+                    }
+
+                    .badge{
+                        color: v.$dark-blue;
+                        background-color: v.$green;
+                        @extend .paragraphs-text-xs;
+                        line-height: 2.8rem!important;
+                        padding: .3rem 1.4rem;
+                        border-radius: 12rem;
+                        margin-left: 1rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            &.one{
+                img{
+                    margin-bottom: 4rem;
+                }
+
+                .text{
+                    @extend .paragraphs-text-xs;
+                    font-weight: 400;
+                    color: v.$grey;
+                    max-width: 30rem;
+                    padding-bottom: 6.4rem;
+                }
+
+                .copyright{
+                    @extend .paragraphs-text-xs;
+                    font-weight: 400;
+                    color: v.$grey;
+                }
+            }
+        }
+
+        
+
+        
+    }
+
+
+
+
+
+}

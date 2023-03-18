@@ -22,6 +22,7 @@ import { FiArrowRight, FiCheck, FiFeather, FiSun, FiEye, FiArrowLeft } from "rea
 import { Link } from 'react-router-dom';
 import Accordion from '../../atoms/accordion/Accordion';
 import FooterCTA from '../../molecules/footer-cta/FooterCTA';
+import Footer from '../../molecules/footer/Footer';
 
 function HomePage() {
 
@@ -350,6 +351,8 @@ function HomePage() {
       </div>
 
       <FooterCTA />
+
+      <Footer />
 
     </div>
   )
