@@ -1,8 +1,11 @@
 import React from 'react'
+import LandingLayout from '../../templates/landing/LandingLayout'
 
 function Product() {
   return (
-    <div>Product</div>
+    <LandingLayout pageTitle="Products">
+
+    </LandingLayout>
   )
 }
 

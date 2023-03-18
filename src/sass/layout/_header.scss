@@ -85,3 +85,23 @@
         }
     }
 }
+
+
+// Custom styles
+.custom-header{
+    width: 100%;
+    height: auto;
+    min-height: 30rem;
+    background-color: v.$dark-blue;
+
+    .title{
+        color: v.$white;
+        padding-top: 8.4rem;
+        @extend .paragraphs-text-m;
+    }
+    
+}
+
+.custom__content{
+    padding: 20rem 0;
+}

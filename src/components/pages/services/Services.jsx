@@ -1,8 +1,11 @@
 import React from 'react'
+import LandingLayout from '../../templates/landing/LandingLayout'
 
 function Services() {
   return (
-    <div>Services</div>
+    <LandingLayout pageTitle="Services">
+
+    </LandingLayout>
   )
 }
 
