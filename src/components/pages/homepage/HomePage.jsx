@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import Accordion from '../../atoms/accordion/Accordion';
 import FooterCTA from '../../molecules/footer-cta/FooterCTA';
 import Footer from '../../molecules/footer/Footer';
+import { Fade } from 'react-reveal';
 
 function HomePage() {
 
@@ -91,293 +92,314 @@ function HomePage() {
       <div className="container">
 
         {/* Our Services Section */}
-        <div className="heading-box">
-          <h6 className="title">Our Services</h6>
-          <h2 className="heading">Handshake infographic mass market crowdfunding iteration.</h2>
-        </div>
+        <Fade bottom distance="1.2rem">
+          <div className="heading-box">
+            <h6 className="title">Our Services</h6>
+            <h2 className="heading">Handshake infographic mass market crowdfunding iteration.</h2>
+          </div>
+        </Fade>
 
 
         {/* Features */}
-        <div className="features">
+        <Fade bottom distance="1.2rem">
+          <div className="features">
 
-          <div className="features__box">
-            <div className="features__box--image">
-              <img src={Feature1} alt="feature1" />
+            <div className="features__box">
+              <div className="features__box--image">
+                <img src={Feature1} alt="feature1" />
+              </div>
+              <div className="features__box--content">
+                <div className="title">Cool feature title</div>
+                <div className="text">Learning curve network effects return on investment.</div>
+                <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
+              </div>
             </div>
-            <div className="features__box--content">
-              <div className="title">Cool feature title</div>
-              <div className="text">Learning curve network effects return on investment.</div>
-              <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
+
+            <div className="features__box">
+              <div className="features__box--image">
+                <img src={Feature2} alt="feature1" />
+              </div>
+              <div className="features__box--content">
+                <div className="title">Even cooler feature</div>
+                <div className="text">Learning curve network effects return on investment.</div>
+                <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
+              </div>
             </div>
+
+            <div className="features__box">
+              <div className="features__box--image">
+                <img src={Feature3} alt="feature1" />
+              </div>
+              <div className="features__box--content">
+                <div className="title">Cool feature title</div>
+                <div className="text">Learning curve network effects return on investment.</div>
+                <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
+              </div>
+            </div>
+
           </div>
+        </Fade>
 
-          <div className="features__box">
-            <div className="features__box--image">
-              <img src={Feature2} alt="feature1" />
-            </div>
-            <div className="features__box--content">
-              <div className="title">Even cooler feature</div>
-              <div className="text">Learning curve network effects return on investment.</div>
-              <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
-            </div>
-          </div>
-
-          <div className="features__box">
-            <div className="features__box--image">
-              <img src={Feature3} alt="feature1" />
-            </div>
-            <div className="features__box--content">
-              <div className="title">Cool feature title</div>
-              <div className="text">Learning curve network effects return on investment.</div>
-              <Link to="/" className="link">Explore page <FiArrowRight size="2.4rem" className='icon' /></Link>
-            </div>
-          </div>
-
-        </div>
 
 
         {/* Customer Connection Section 1 */}
-        <div className="connectbox">
+        <Fade bottom distance="1.2rem">
+          <div className="connectbox">
 
-          <div className="image__content">
-            <div className="image__content--wrapper">
-              <img src={ConnectionImage1} alt="customer conection" className='theimage' />
-              <div className="databox first">
-                <img src={IncomeBarChart} alt="income chart" className='chart' />
-                <h6 className='percentage'>30%</h6>
-                <span className='metrics'>More income in June</span>
+            <div className="image__content">
+              <div className="image__content--wrapper">
+                <img src={ConnectionImage1} alt="customer conection" className='theimage' />
+                <div className="databox first">
+                  <img src={IncomeBarChart} alt="income chart" className='chart' />
+                  <h6 className='percentage'>30%</h6>
+                  <span className='metrics'>More income in June</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="text__content contentpos">
+              <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
+
+              <div className="listcon">
+                <div className="listbox-one">
+                  <div className='check'><FiCheck size="" className='icon' /></div>
+                  <span className='check-text'>We connect our customers with the best.</span>
+                </div>
+
+                <div className="listbox-one">
+                  <div className='check'><FiCheck size="" className='icon' /></div>
+                  <span className='check-text'>Advisor success customer launch party.</span>
+                </div>
+
+                <div className="listbox-one">
+                  <div className='check'><FiCheck size="" className='icon' /></div>
+                  <span className='check-text'>Business-to-consumer long tail.</span>
+                </div>
+
+                <div className='cta'>
+                  <button className='btn btn-primary-large'> Start now</button>
+                </div>
               </div>
             </div>
           </div>
+        </Fade>
 
-          <div className="text__content contentpos">
-            <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
-
-            <div className="listcon">
-              <div className="listbox-one">
-                <div className='check'><FiCheck size="" className='icon' /></div>
-                <span className='check-text'>We connect our customers with the best.</span>
-              </div>
-
-              <div className="listbox-one">
-                <div className='check'><FiCheck size="" className='icon' /></div>
-                <span className='check-text'>Advisor success customer launch party.</span>
-              </div>
-
-              <div className="listbox-one">
-                <div className='check'><FiCheck size="" className='icon' /></div>
-                <span className='check-text'>Business-to-consumer long tail.</span>
-              </div>
-
-              <div className='cta'>
-                <button className='btn btn-primary-large'> Start now</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Customer Connection Section 2 */}
-        <div className="connectbox">
+        <Fade bottom distance="1.2rem">
+          <div className="connectbox">
 
-          <div className="text__content">
-            <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
-            <div className="listcon">
+            <div className="text__content">
+              <h1 className='heading'>We connect our customers with the best, and help them keep up-and stay open.</h1>
+              <div className="listcon">
 
-              <div className="listbox-two">
-                <div className='check'><FiFeather size="" className='icon' /></div>
-                <span className='check-text'>We connect our customers with the best.</span>
-              </div>
+                <div className="listbox-two">
+                  <div className='check'><FiFeather size="" className='icon' /></div>
+                  <span className='check-text'>We connect our customers with the best.</span>
+                </div>
 
-              <div className="listbox-two">
-                <div className='check'><FiSun size="" className='icon' /></div>
-                <span className='check-text'>Advisor success customer launch party.</span>
-              </div>
+                <div className="listbox-two">
+                  <div className='check'><FiSun size="" className='icon' /></div>
+                  <span className='check-text'>Advisor success customer launch party.</span>
+                </div>
 
-              <div className="listbox-two">
-                <div className='check'><FiEye size="" className='icon' /></div>
-                <span className='check-text'>Business-to-consumer long tail.</span>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="image__content contentpos">
-
-            <div className="image__content--wrapper">
-              <img src={ConnectionImage2} alt="customer conection" />
-              <div className="databox second">
-                <img src={PieChart} alt="income chart" className='chart' />
-                <ul className='metricsbox'>
-                  <li className='item blue'>35% -  Agile Development</li>
-                  <li className='item green'>30% -  Investor bandwidth</li>
-                  <li className='item grey'>35% -  A/B testing</li>
-                </ul>
+                <div className="listbox-two">
+                  <div className='check'><FiEye size="" className='icon' /></div>
+                  <span className='check-text'>Business-to-consumer long tail.</span>
+                </div>
 
               </div>
             </div>
 
-          </div>
+            <div className="image__content contentpos">
 
-        </div>
+              <div className="image__content--wrapper">
+                <img src={ConnectionImage2} alt="customer conection" />
+                <div className="databox second">
+                  <img src={PieChart} alt="income chart" className='chart' />
+                  <ul className='metricsbox'>
+                    <li className='item blue'>35% -  Agile Development</li>
+                    <li className='item green'>30% -  Investor bandwidth</li>
+                    <li className='item grey'>35% -  A/B testing</li>
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </Fade>
 
       </div>
 
       {/* Testimonials */}
-      <div className="testimonials">
-        <div className="container-sm">
+      <Fade bottom distance="1.2rem">
+        <div className="testimonials">
+          <div className="container-sm">
 
-          <div className="testimonials__header">
-            <h1 className='heading'>An enterprise template to ramp up your company website</h1>
-            <div className="slider-control">
-              <div className="control" onClick={() => handleBoxSlider("l")} ><FiArrowLeft className='icon' /></div>
-              <div className="control"onClick={() => handleBoxSlider("r")} ><FiArrowRight className='icon' /></div>
+            <div className="testimonials__header">
+              <h1 className='heading'>An enterprise template to ramp up your company website</h1>
+              <div className="slider-control">
+                <div className="control" onClick={() => handleBoxSlider("l")} ><FiArrowLeft className='icon' /></div>
+                <div className="control" onClick={() => handleBoxSlider("r")} ><FiArrowRight className='icon' /></div>
+              </div>
             </div>
-          </div>
 
-          <div className="testimonials__slider" ref={sliderRef}>
+            <div className="testimonials__slider" ref={sliderRef}>
 
-            {testimonials.map((user, index) => (
-              <div className="testimonials__slider--box" key={index}>
+              {testimonials.map((user, index) => (
+                <div className="testimonials__slider--box" key={index}>
 
-                <q className='quote'>{user.quote}</q>
-                <div className="userbox">
+                  <q className='quote'>{user.quote}</q>
+                  <div className="userbox">
 
-                  <div className="user-image">
-                    <img src={user.userImage} alt="user" className='image' />
-                  </div>
+                    <div className="user-image">
+                      <img src={user.userImage} alt="user" className='image' />
+                    </div>
 
-                  <div className="user-details">
-                    <p className="name">{user.name}</p>
-                    <span className="position">{user.position}</span>
+                    <div className="user-details">
+                      <p className="name">{user.name}</p>
+                      <span className="position">{user.position}</span>
+                    </div>
+
                   </div>
 
                 </div>
+              ))}
 
-              </div>
-            ))}
+            </div>
 
           </div>
-
         </div>
-      </div>
+      </Fade>
+
 
       {/* Teams section */}
-
-      <div className="learn-more">
-        <div className="container-sm">
-          <div className="imagebox">
-            <img src={ConnectionImage3} alt="connection" />
-          </div>
-
-          <div className="content">
-
-            <p className='lefttext'>We connect our customers with the best, and help them keep up-and stay open.</p>
-            <div className="accordion">
-
-              <Accordion
-                title="We connect our customers with the best?"
-                content="We connect our customers with the best?"
-              />
-
-              <Accordion
-                title="Android research & development rockstar?"
-                content="Android research & development rockstar?"
-              />
+      <Fade bottom distance="1.2rem">
+        <div className="learn-more">
+          <div className="container-sm">
+            <div className="imagebox">
+              <img src={ConnectionImage3} alt="connection" />
             </div>
 
+            <div className="content">
+
+              <p className='lefttext'>We connect our customers with the best, and help them keep up-and stay open.</p>
+              <div className="accordion">
+
+                <Accordion
+                  title="We connect our customers with the best?"
+                  content="We connect our customers with the best?"
+                />
+
+                <Accordion
+                  title="Android research & development rockstar?"
+                  content="Android research & development rockstar?"
+                />
+              </div>
+
+            </div>
           </div>
         </div>
-      </div>
+      </Fade>
+
 
       {/* Our Blog Section */}
-      <div className="container-sm">
-        <div className="heading-box">
-          <h6 className="title">Our Blog</h6>
-          <h2 className="heading">Value proposition accelerator product management venture</h2>
-        </div>
+      <Fade bottom distance="1.2rem">
+        <div className="container-sm">
+          <div className="heading-box">
+            <h6 className="title">Our Blog</h6>
+            <h2 className="heading">Value proposition accelerator product management venture</h2>
+          </div>
 
-        <div className="blog__wrapper">
+          <div className="blog__wrapper">
 
-          <div className="blog__box">
-            <div className="blog__box--imagebox">
-              <img src={BlogPost1} alt="blogpost1" />
-            </div>
-            <div className="blog__box--heading">
-              <span className='category'>Category</span>
-              <span className='date'>November 22, 2021</span>
-            </div>
-            <div className="wraptext">
-              <p className='blog__box--maintext'>
-                Pitch termsheet backing validation focus release.
-              </p>
-
-              <div className="blog__box--author">
-                <div className="picture">
-                  <img src={Author1} alt="author1" />
-                </div>
-                <span className="name">Chandler Bing</span>
+            <div className="blog__box">
+              <div className="blog__box--imagebox">
+                <img src={BlogPost1} alt="blogpost1" />
               </div>
+              <div className="blog__box--heading">
+                <span className='category'>Category</span>
+                <span className='date'>November 22, 2021</span>
+              </div>
+              <div className="wraptext">
+                <p className='blog__box--maintext'>
+                  Pitch termsheet backing validation focus release.
+                </p>
+
+                <div className="blog__box--author">
+                  <div className="picture">
+                    <img src={Author1} alt="author1" />
+                  </div>
+                  <span className="name">Chandler Bing</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="blog__box">
+              <div className="blog__box--imagebox">
+                <img src={BlogPost2} alt="blogpost1" />
+              </div>
+              <div className="blog__box--heading">
+                <span className='category'>Category</span>
+                <span className='date'>November 22, 2021</span>
+              </div>
+              <div className="wraptext">
+                <p className='blog__box--maintext'>
+                  Seed round direct mailing non-disclosure agreement graphical user interface rockstar.
+                </p>
+
+                <div className="blog__box--author">
+                  <div className="picture">
+                    <img src={Author2} alt="author1" />
+                  </div>
+                  <span className="name">Chandler Bing</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="blog__box">
+              <div className="blog__box--imagebox">
+                <img src={BlogPost3} alt="blogpost1" />
+              </div>
+              <div className="blog__box--heading">
+                <span className='category'>Category</span>
+                <span className='date'>November 22, 2021</span>
+              </div>
+              <div className="wraptext">
+                <p className='blog__box--maintext'>
+                  Beta prototype sales iPad gen-z marketing network effects value proposition
+                </p>
+
+                <div className="blog__box--author">
+                  <div className="picture">
+                    <img src={Author3} alt="author1" />
+                  </div>
+                  <span className="name">Chandler Bing</span>
+                </div>
+              </div>
+
             </div>
 
           </div>
 
-          <div className="blog__box">
-            <div className="blog__box--imagebox">
-              <img src={BlogPost2} alt="blogpost1" />
-            </div>
-            <div className="blog__box--heading">
-              <span className='category'>Category</span>
-              <span className='date'>November 22, 2021</span>
-            </div>
-            <div className="wraptext">
-              <p className='blog__box--maintext'>
-                Seed round direct mailing non-disclosure agreement graphical user interface rockstar.
-              </p>
-
-              <div className="blog__box--author">
-                <div className="picture">
-                  <img src={Author2} alt="author1" />
-                </div>
-                <span className="name">Chandler Bing</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div className="blog__box">
-            <div className="blog__box--imagebox">
-              <img src={BlogPost3} alt="blogpost1" />
-            </div>
-            <div className="blog__box--heading">
-              <span className='category'>Category</span>
-              <span className='date'>November 22, 2021</span>
-            </div>
-            <div className="wraptext">
-              <p className='blog__box--maintext'>
-                Beta prototype sales iPad gen-z marketing network effects value proposition
-              </p>
-
-              <div className="blog__box--author">
-                <div className="picture">
-                  <img src={Author3} alt="author1" />
-                </div>
-                <span className="name">Chandler Bing</span>
-              </div>
-            </div>
-
+          <div className="centralize">
+            <button className='btn btn-secondary-large'>Load more</button>
           </div>
 
         </div>
+      </Fade>
 
-        <div className="centralize">
-          <button className='btn btn-secondary-large'>Load more</button>
-        </div>
+      <Fade bottom distance="1.2rem">
+        <FooterCTA />
+      </Fade>
 
-      </div>
-
-      <FooterCTA />
-
-      <Footer />
+      <Fade bottom distance="1.2rem">
+        <Footer />
+      </Fade>
 
     </div>
   )
