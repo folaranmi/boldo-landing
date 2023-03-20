@@ -89,7 +89,7 @@
         max-height: 9.3rem;
         padding: 3.3rem 0 1.2rem 0;
         position: relative;
-        
+
         @include m.flexbox(row, flex-start, center);
         gap: 5.6rem;
         overflow-x: auto;
@@ -102,7 +102,7 @@
             display: none;
         }
 
-        &::after{
+        &::after {
             content: "";
             position: absolute;
             top: 0;
@@ -114,7 +114,7 @@
 
     }
 
-    
+
 }
 
 // Services features
@@ -217,12 +217,13 @@
             .theimage {
                 width: 100%;
                 max-width: 49.9rem;
+                position: relative;
             }
 
             .databox {
-                width: auto;
-
-                height: 38.8rem;
+                width: 100%;
+                height: auto;
+                min-height: 38.8rem;
                 border-radius: .4rem;
                 box-shadow: 0 .4rem 3.2rem rgba(0, 0, 0, 0.12);
                 border-radius: 1.2rem;
@@ -232,11 +233,29 @@
                 z-index: 120;
                 position: relative;
 
+                .chart {
+                    width: 100%;
+                    height: auto;
+                }
+
                 &.first {
                     max-width: 25.1rem;
                     padding: 4rem;
                     margin-top: -28.4rem;
                     margin-left: 18.6rem;
+
+                    @include m.phoneS {
+                        margin-top: -18.4rem;
+                        margin-left: 8rem;
+                    }
+
+                    @include m.phoneM {
+                        margin-left: 6rem;
+                    }
+
+                    @include m.phoneXS {
+                        margin-left: 2rem;
+                    }
                 }
 
                 &.second {
@@ -244,6 +263,20 @@
                     padding: 4.779rem 5.579rem;
                     margin-top: -21.9rem;
                     margin-left: 4.8rem;
+
+                    @include m.phoneM {
+                        max-width: 25rem;
+                        padding: 2.4rem 3rem;
+                        margin-top: -21.9rem;
+                        margin-left: 3.8rem;
+                    }
+
+                    @include m.phoneXS {
+                        max-width: 23rem;
+                        padding: 2rem;
+                        margin-top: -15.9rem;
+                        margin-left: 1.8rem;
+                    }
                 }
 
 

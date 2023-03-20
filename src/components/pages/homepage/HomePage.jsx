@@ -214,7 +214,7 @@ function HomePage() {
             <div className="image__content contentpos">
 
               <div className="image__content--wrapper">
-                <img src={ConnectionImage2} alt="customer conection" />
+                <img src={ConnectionImage2} alt="customer conection" className='theimage'/>
                 <div className="databox second">
                   <img src={PieChart} alt="income chart" className='chart' />
                   <ul className='metricsbox'>
